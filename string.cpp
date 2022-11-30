@@ -9,9 +9,11 @@
         }
         return count;
     }
+
     String(){
         pointer = nullptr;
     }
+
     String(char* str){
         size = strlen(str);
         pointer = new char[size + 1];
