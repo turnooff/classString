@@ -2,19 +2,18 @@
 #include "my_string.h"
 #include <cmath>
 
-    int strlen(const char* str){
+int String::strlen(const char* str){
         int count = 0;
         while (str[count] != '\0'){
             count++;
         }
         return count;
     }
-
-    String(){
+String::String(){
         pointer = nullptr;
     }
 
-    String(char* str){
+String::String(char* str){
         size = strlen(str);
         pointer = new char[size + 1];
         for (int i = 0; i < size; ++i){
@@ -22,13 +21,13 @@
         }
         pointer[size] = '\0';
     }
-    ~String(){
+String::~String(){
         delete[] pointer;
     }
-    void Print(){
+    void String::Print(){
         std::cout << pointer << "\n";
     }
-    String& operator= (const char* str){
+    String& String::operator= (const char* str){
         if (pointer != nullptr){
             delete[] pointer;
         }
@@ -41,7 +40,7 @@
 
         return *this;
     }
-    char& operator[] (std::size_t pos){
+    char& String::operator[] (std::size_t pos){
         for (int i = 0; i < size; ++i){
             if (i == pos){
                 return pointer[i];
@@ -49,7 +48,7 @@
         }
         return pointer[size];
     }
-    int compare(String& str){
+    int String::compare(String& str){
         int min_size = 0;
         if (size > str.size){
             min_size = str.size;
@@ -77,7 +76,7 @@
             }
         }
     }
-    String& insert (std::size_t pos, const char* str){
+    String& String::insert (std::size_t pos, const char* str){
         int new_size = size + strlen(str);
         char* new_str = new char[size];
         for (int i = 0; i < size; ++i){
@@ -109,7 +108,7 @@
         return *this;
     }
 
-    String(String &str){
+String::String(String &str){
         size = str.size;
         pointer = new char[size + 1];
         for (int i = 0; i < size; ++i){
@@ -118,13 +117,13 @@
         pointer[size] = '\0';
     }
 
-    String(String &&str) noexcept{
+String::String(String &&str) noexcept{
         size = str.size;
         pointer = str.pointer;
         str.pointer = nullptr;
     }
 
-    String& operator= (String&& str)noexcept{
+    String& String::operator= (String&& str)noexcept{
         if (pointer != nullptr){
             delete[] pointer;
         }

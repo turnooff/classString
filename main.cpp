@@ -145,8 +145,7 @@
 int main(){
     String a("TEST");
     String b("START");
-    //std::cout << a.Print();
-    //a.insert(3, "finish");
+    a.insert(3, "finish");
     a.Print();
     return 0;
 }
