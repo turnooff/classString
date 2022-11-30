@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "string.h"
+#include "my_string.h"
 
 //class String{
 //private:

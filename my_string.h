@@ -8,7 +8,7 @@ private:
     char* pointer;
     int strlen(const char* str);
 public:
-    String(){};
+    String();
     String(char* str);
     ~String();
     void Print();
