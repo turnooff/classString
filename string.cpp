@@ -1,5 +1,5 @@
 #include <iostream>
-#include "string.h"
+#include "my_string.h"
 #include <cmath>
 
     int strlen(const char* str){
